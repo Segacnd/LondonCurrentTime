@@ -190,11 +190,39 @@
     position: absolute;
     left: 35%;
     top: 75%;
-    border-radius: 10px;
+   
     
     background-color: #524e4e86;
     filter: blur(20px);
     width: 500px;
     height: 50px;
     z-index: 1;
+}
+
+h2
+{
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    font-family: 'Digital dream';
+    color: rgba(240, 248, 255, 0.707);
+}
+
+.city
+{
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    background-color: #4d4b63;
+    outline: none;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 10px;
+    color: rgba(240, 248, 255, 0.684);
+    font-family: 'Digital dream';
+
+    box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
+                  inset 4px 4px 10px rgba(0,0,0,0.5),
+                  inset -4px -4px 10px rgba(67,67,67,0.5),
+                  4px 4px 10px rgba(0,0,0,0.3);
 }
