@@ -77,9 +77,12 @@ async function setDate(city = 'London') {
 
 
 
-setInterval(setDate, 1000);
 
-setDate();
+const obj = {
+    city: 'Minsk',
+    set: function () {
+       setInterval(() => setDate(this.city), 1000) 
+    }
+}
 
-
-
+obj.set()
