@@ -61,7 +61,7 @@ async function setDate(city = 'London') {
 
     
     
-
+    document.querySelector('h2').textContent = `Current time in '${city}'`;
     // const seconds = now.getSeconds();
     const secondsDegrees = ((seconds / 60) * 360) + 90;
     secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
@@ -76,11 +76,16 @@ async function setDate(city = 'London') {
 }
 
 
-
+document.querySelector('.city').addEventListener('keyup', function (e) {
+    if (e.key == 'Enter') {
+        obj.set(e.target.value);
+    }
+})
 
 const obj = {
-    city: 'Minsk',
-    set: function () {
+    city: 'London',
+    set: function (city) {
+        this.city = city;
        setInterval(() => setDate(this.city), 1000) 
     }
 }
