@@ -199,9 +199,8 @@
 {
     content: '';
     position: absolute;
-    left: 34%;
-    top: 80%;
-   
+    bottom: 13%;
+    
     
     background-color: #524e4e86;
     filter: blur(20px);
