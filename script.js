@@ -99,10 +99,13 @@ const obj = {
        console.log(intervalId)
     },
     findRegion: function (city) {
-        const res = Object.entries(allRegions).find(element => {
-            const isIncludes = element[1].includes(city)
-            return isIncludes
-        })
+        const res = Object.entries(allRegions).find(element => element[1].includes(city))
+        if ( !res ) {
+            clearValue()
+            alert("No  found.");
+            throw new Error("No  found.");
+        } 
+
         return res[0]
     },
 }
