@@ -1,5 +1,8 @@
 
-
+@font-face {
+  font-family: 'Digital dream'; /* Гарнитура шрифта */
+  src: url(../fonts/DIGITALDREAM.ttf); /* Путь к файлу со шрифтом */
+ }
  html {
     background: #282828;
     text-align: center;
