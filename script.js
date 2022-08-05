@@ -1,3 +1,4 @@
+import allRegions from './regions.js'
 const secondHand = document.querySelector('.second-hand');
 const minsHand = document.querySelector('.min-hand');
 const hourHand = document.querySelector('.hour-hand');
@@ -5,31 +6,32 @@ const hourHand = document.querySelector('.hour-hand');
 
 
 
-async function currentTime (city) {
-    const result = await fetch(`https://worldtimeapi.org/api/timezone/Europe/${city}`)
+async function currentTime (city, region) {
+    const result = await fetch(`https://worldtimeapi.org/api/timezone/${region}/${city}`)
     .then((response) => {
         if (!response.ok) {
             alert("No  found.");
+            clearInterval(intervalId)
             throw new Error("No  found.");
         } return response.json();
     })
     .then((data) => data);
-
+    
     return result.datetime;  
 };
 
 // ogo('London')
 
-async function formatDate(city){
-    const timeLondn = await currentTime(city)
+async function formatDate(city, region){
+    const timeLondn = await currentTime(city, region)
     const qwe = timeLondn.split('T').pop().split('.')[0];
     const lastRes = qwe.split(':')
     return lastRes;
 }
 
 
-async function setDate(city = 'London') {
-    const lastRes = await formatDate(city);
+async function setDate(city = 'London', region = 'Europe') {
+    const lastRes = await formatDate(city, region);
     
     const hour = lastRes[0];
     const mins = lastRes[1];
@@ -79,15 +81,31 @@ async function setDate(city = 'London') {
 document.querySelector('.city').addEventListener('keyup', function (e) {
     if (e.key == 'Enter') {
         obj.set(e.target.value);
+        clearValue()
     }
 })
-
-const obj = {
-    city: 'London',
-    set: function (city) {
-        this.city = city;
-       setInterval(() => setDate(this.city), 1000) 
-    }
+function clearValue () {
+    document.querySelector(".city").value = "";
 }
 
-obj.set()
+let intervalId;
+const obj = {
+    
+    set: function (city) {
+        // this.city = city;
+        const region = this.findRegion(city);
+        clearInterval(intervalId)
+       intervalId = setInterval(() => setDate(city, region), 1000) 
+       console.log(intervalId)
+    },
+    findRegion: function (city) {
+        const res = Object.entries(allRegions).find(element => {
+            const isIncludes = element[1].includes(city)
+            return isIncludes
+        })
+        return res[0]
+    },
+}
+
+obj.set('London')
+console.log(intervalId)
