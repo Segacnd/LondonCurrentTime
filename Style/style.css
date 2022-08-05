@@ -1,17 +1,27 @@
 
+
  html {
     background: #282828;
     text-align: center;
     font-size: 10px;
+  }
+
+  body
+  {
+    width: 100%;
   }
   
   main {
     margin: 0;
     font-size: 2rem;
     display: flex;
+    width: 100%;
     flex: 1;
     min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    position: relative;
   }
   
   .clock {
@@ -152,7 +162,7 @@
     content: '';
     position: absolute;
     left: 49.3%;
-    top: 49.3%;
+    top: 49.9%;
     border-radius: 10px;
     
     /* background-color: #524e4e86; */
@@ -167,9 +177,10 @@
 
 .digitClock
 {
-    position: absolute;
+    /* position: absolute;
     left: 37%;
-    top: 72%;
+    top: 72%; */
+    position: relative;
     font-size: 36px;
     letter-spacing: 2px;
     color: aliceblue;
@@ -188,8 +199,8 @@
 {
     content: '';
     position: absolute;
-    left: 35%;
-    top: 75%;
+    left: 34%;
+    top: 80%;
    
     
     background-color: #524e4e86;
@@ -201,18 +212,19 @@
 
 h2
 {
-    position: absolute;
+    /* position: absolute;
     top: 10%;
-    left: 33.5%;
+    left: 33.5%; */
     font-family: 'Digital dream';
     color: rgba(240, 248, 255, 0.707);
+    margin-bottom: 30px;
 }
 
 .city
 {
-    position: absolute;
+    /* position: absolute;
     top: 20%;
-    left: 40%;
+    left: 40%; */
     background-color: #4d4b63;
     outline: none;
     border: none;
