@@ -39,8 +39,10 @@
                   4px 4px 10px rgba(0,0,0,0.3);
     border-radius: 50%;
     margin: 50px auto;
-  
+    z-index: 30;
   }
+
+
 
   .outer-clock-face {
     position: relative;
@@ -65,7 +67,7 @@
     position: absolute;
     width: 5px;
     height: 100%;
-    background: #1d89f5;
+    background: #0789bd;
     z-index: 0;
     left: 49%;
   }
@@ -134,7 +136,7 @@
     width: 50%;
     right: 50%;
     height: 6px;
-    background: #61afff;
+    background: #deac49;
     position: absolute;
     top: 50%;
     border-radius: 6px;
@@ -155,7 +157,7 @@
   }
   
   .hand.second-hand {
-    background: #ee791a;
+    background: #0789bd;
     width: 45%;
     height: 2px;
   }
@@ -189,7 +191,7 @@
     color: aliceblue;
     font-family: 'Digital dream';
     border-radius: 10px;
-    padding: 10px 30px;
+    padding: 10px 0;
     border: 7px solid #524e4ead;
     box-shadow: -4px -4px 10px rgba(67,67,67,0.5),
                   inset 4px 4px 10px rgba(0,0,0,0.5),
@@ -218,8 +220,11 @@ h2
     top: 10%;
     left: 33.5%; */
     font-family: 'Digital dream';
-    color: rgba(240, 248, 255, 0.707);
+    font-size: 32px;
+    color: rgba(240, 248, 255, 0.853);
     margin-bottom: 30px;
+    flex-grow: 1;
+   
 }
 
 .city
@@ -229,8 +234,8 @@ h2
     left: 40%; */
     background-color: #4d4b63;
     outline: none;
-    border: none;
-    padding: 6px 15px;
+    border: 2px solid #8381996b;
+    padding: 8px 15px 5px;
     border-radius: 10px;
     color: rgba(240, 248, 255, 0.684);
     font-family: 'Digital dream';

@@ -13,26 +13,31 @@
 </head>
 <body>
     <main>
-        <h2></h2>
-        <input type="text" class="city" placeholder="Enter the city">
-        <div class="clock">
-            <div class="outer-clock-face">
-                <div class="marking marking-one"></div>
-                <div class="marking marking-two"></div>
-                <div class="marking marking-three"></div>
-                <div class="marking marking-four"></div>
-                <div class="inner-clock-face">
-                    <div class="hand hour-hand"></div>
-                    <div class="hand min-hand"></div>
-                    <div class="hand second-hand"></div>
+   
+        <div class="wrap">
+            <h2></h2>
+            <input type="text" class="city" placeholder="Enter the city">
+            
+            <div class="clock">
+                <div class="outer-clock-face">
+                    <div class="marking marking-one"></div>
+                    <div class="marking marking-two"></div>
+                    <div class="marking marking-three"></div>
+                    <div class="marking marking-four"></div>
+                    <div class="inner-clock-face">
+                        <div class="hand hour-hand"></div>
+                        <div class="hand min-hand"></div>
+                        <div class="hand second-hand"></div>
+                    </div>
                 </div>
+                
+            </div>
+            <div class="digitClock" id = "clock" onload="currentTime()">
+                <div class="newBlock"></div>
             </div>
             
+            <div class="newBlock2"></div>
         </div>
-        <div class="digitClock" id = "clock" onload="currentTime()"><div class="newBlock"></div></div>
-        <div class="newBlock"></div>
-        <div class="newBlock2"></div>
-        
     </main>
 </body>
 </html>

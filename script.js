@@ -93,7 +93,12 @@ const obj = {
     
     set: function (city) {
         // this.city = city;
-        const region = this.findRegion(city);
+        const str = city.replace(/^[^a-zа-яё]*([a-zа-яё])/i, function(m){
+            return m.toUpperCase();
+        });
+        
+        console.log(str);
+        const region = this.findRegion(str);
         clearInterval(intervalId)
        intervalId = setInterval(() => setDate(city, region), 1000) 
        console.log(intervalId)
